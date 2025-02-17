@@ -22,7 +22,7 @@ app.use('/api',sellerroutes);
 app.use('/api',productroutes);
 app.use('/api',orderRoutes);
 
-const port = process.env.PORT || 3000; // Example: Using environment variable or default to 3000
+const port = process.env.PORT || 8080; // Example: Using environment variable or default to 8080
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
