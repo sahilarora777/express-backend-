@@ -28,7 +28,12 @@ required: true,
 type: String,
 required: true,
     unique: true
-   }
+   },
+   isEmailVerified:{
+type: Boolean,
+default: false,
+enum:[true,false]
+   },
 });
 
 module.exports=mongoose.model("Seller",sellerSchema);
