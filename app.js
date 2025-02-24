@@ -9,6 +9,7 @@ const sellerroutes = require('./routes/sellerRoutes');
 const productroutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const PaymentRoutes = require('./routes/PaymentRoutes');
+const bannerRoutes = require('./routes/bannerRoutes')
 
 const app = express();
 app.use(express.json());
@@ -29,6 +30,9 @@ app.use('/api', sellerroutes);
 app.use('/api', productroutes);
 app.use('/api', orderRoutes);
 app.use('/api', PaymentRoutes);
+app.use('/api', bannerRoutes);
+
+
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {

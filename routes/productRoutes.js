@@ -45,6 +45,23 @@ res.status(201).json(product);
 }
 );
 
+router.post('/products/bulk',  async (req, res) => {
+    try {
+      const products = req.body;
+  
+      if (!Array.isArray(products) || products.length === 0) {
+        return res.status(400).json({ message: 'Invalid or empty product data' });
+      }
+  
+      const savedProducts = await Product.insertMany(products);
+  
+      res.status(201).json(savedProducts);
+    } catch (error) {
+      res.status(500).json({ message: 'An error occurred while adding products', error });
+    }
+  });
+  
+
 router.get("/home_products",async(req,res)=>{
     try{
         const products = await Product.find();
